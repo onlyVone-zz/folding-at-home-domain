@@ -1,0 +1,26 @@
+http:
+ inner-port: "![l2JJphz/UGiJSFnBWiA7wA==]"
+ inner-basepath: "/"
+ inner-host: "![x4/pJjX7cxe7rOR6JSXZVg==]"
+ 
+folding-at-home:
+ http:
+  download-txt-url: "/download-txt-files"
+ http-request:
+  main-url: ""
+  donors-txt-download-endpoint: ""
+  teams-txt-download-endpoint: ""
+  inner:
+   donors-listener: "/inner-donors"
+   teams-listener: "/inner-teams"
+   
+  
+database:
+ host: "![qi0imzqx12b3ZouyG1U/qQ==]"
+ port: "![ysBPMlC1Hp5Opj44Bo2jQA==]"
+ username: "![JUePbqt/VfgZg+BlrFIShA==]"
+ password: "![WFHnUwrKcXsiJIcVcanZwQ==]"
+ name: "folding_at_home"
+ 
+scheduler:
+ timer: "60"     #minutes
