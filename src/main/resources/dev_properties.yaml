@@ -7,9 +7,9 @@ folding-at-home:
  http:
   download-txt-url: "/download-txt-files"
  http-request:
-  main-url: ""
-  donors-txt-download-endpoint: ""
-  teams-txt-download-endpoint: ""
+  host: "apps.foldingathome.org"
+  donors-txt-download-endpoint: "/daily_user_summary.txt"
+  teams-txt-download-endpoint: "/daily_team_summary.txt"
   inner:
    donors-listener: "/inner-donors"
    teams-listener: "/inner-teams"
