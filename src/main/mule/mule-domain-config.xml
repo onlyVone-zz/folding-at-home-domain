@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <domain:mule-domain
+        xmlns:jms="http://www.mulesoft.org/schema/mule/jms"
         xmlns:os="http://www.mulesoft.org/schema/mule/os"
         xmlns:db="http://www.mulesoft.org/schema/mule/db"
         xmlns:secure-properties="http://www.mulesoft.org/schema/mule/secure-properties"
-        xmlns:http="http://www.mulesoft.org/schema/mule/http"
-        xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:domain="http://www.mulesoft.org/schema/mule/ee/domain" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xsi:schemaLocation="
+        xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:domain="http://www.mulesoft.org/schema/mule/ee/domain" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xsi:schemaLocation="
                http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
                http://www.mulesoft.org/schema/mule/ee/domain http://www.mulesoft.org/schema/mule/ee/domain/current/mule-domain-ee.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/schema/mule/secure-properties/current/mule-secure-properties.xsd
 http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
-http://www.mulesoft.org/schema/mule/os http://www.mulesoft.org/schema/mule/os/current/mule-os.xsd">
+http://www.mulesoft.org/schema/mule/os http://www.mulesoft.org/schema/mule/os/current/mule-os.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd">
 	<global-property doc:name="Global Property" doc:id="9474b49b-aa29-4e00-a96f-3aab364e25b4" name="env" value="${runtime.env}" />
 	<configuration-properties doc:name="Configuration properties" doc:id="e03c3c18-ce8c-4261-b2ce-1d0ee5438dba" file="${env}_properties.yaml" />
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="0722ff48-ecb7-4b8d-b1b9-aa6e3315ddbe" basePath="${http.inner-basepath}" >
@@ -29,5 +30,12 @@ http://www.mulesoft.org/schema/mule/os http://www.mulesoft.org/schema/mule/os/cu
 		<http:request-connection protocol="HTTPS" host="${folding-at-home.http-request.host}" />
 	</http:request-config>
 	<os:object-store name="Object_store" doc:name="Object store" doc:id="96fbc6f6-7b36-43da-9f8a-fc29a5231e9b" />
+	<jms:config name="JMS_Config" doc:name="JMS Config" doc:id="e2d8a641-aedd-4acb-a6ca-11bca8ebdf6b" >
+		<jms:active-mq-connection username="admin" password="admin" clientId="ID:ip-172-31-46-13-40397-1581088678641-0:1">
+			<jms:factory-configuration brokerUrl="tcp://52.59.217.107:61616" trustAllPackages="true">
+				<jms:trusted-packages />
+			</jms:factory-configuration>
+		</jms:active-mq-connection>
+	</jms:config>
 
 </domain:mule-domain>

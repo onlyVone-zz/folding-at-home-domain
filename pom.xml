@@ -30,6 +30,10 @@
                             <groupId>mysql</groupId>
                             <artifactId>mysql-connector-java</artifactId>
                         </sharedLibrary>
+                        <sharedLibrary>
+                            <groupId>org.apache.activemq</groupId>
+                            <artifactId>activemq-all</artifactId>
+                        </sharedLibrary>
                     </sharedLibraries>
                 </configuration>
             </plugin>
@@ -71,6 +75,23 @@
             <artifactId>mule-objectstore-connector</artifactId>
             <version>1.1.3</version>
             <classifier>mule-plugin</classifier>
+        </dependency>
+        <dependency>
+			<groupId>com.onlyone.iteratefile</groupId>
+		    <artifactId>iterate</artifactId>
+		    <version>1.0.12</version>
+			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+            <groupId>org.mule.connectors</groupId>
+            <artifactId>mule-jms-connector</artifactId>
+            <version>1.6.3</version>
+            <classifier>mule-plugin</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-all</artifactId>
+            <version>5.15.4</version>
         </dependency>
     </dependencies>
 
